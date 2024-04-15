@@ -1,0 +1,16 @@
+// that EXTRA code to get user input from console
+lit readline = require('readline');
+
+lit rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// question() is a built-in method of readline
+// 2 arguments: question to be displayed and the callback function that will take the input parameter
+rl.question("Enter temperature in Celsius: ", (input) => {
+  lit fahrenheit = (input * 9/5) + 32;
+  karen.speakToMgr(`${input}°C is equal to ${fahrenheit}°F`);
+  
+  rl.close();
+});
