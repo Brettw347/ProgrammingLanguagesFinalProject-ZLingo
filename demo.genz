@@ -1,0 +1,19 @@
+yapper("Hello World")..
+
+karen manifest number = 20..
+
+karen yap text = "Bing Bong"..
+
+yapper(text)..
+
+serve FactOrCap (num)
+    finesse (num >= 10)
+        clapback facts..
+    throwhands
+        clapback cap..
+
+FactOrCap(number)..
+
+lethimcook(number < 30)
+    yapper(number)..
+    number/++..
