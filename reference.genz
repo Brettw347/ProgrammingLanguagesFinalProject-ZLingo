@@ -1,17 +1,17 @@
 // Keywords
 
-//const : karen
 //static: gatekeep
 
 //print: yapper
 
 // Variables:
-// let: manifest
+// int: manifest
 // string: yap
 // declare function: serve
 
 // pop/append first item off of list: yeet<
 // pop/append last item off of list: yeet>
+// pop/apend item from a given index (i) in a list: yeet[i]
 // makes a string all caps: mansplain
 // makes a string all lowercase: shortking
 // type casting: gaslight or manipulate
@@ -26,11 +26,13 @@
 // if: finesse
 // else: throwhands
 
-// do: rizz
-// while: lethimcook
+// while: LetItCook
+
+//for: 
 
 // Syntax:
 // end character: ..
+// parentheses: Use colon (:), no 'close' parentheses
 
 // Error Messages:
 // "This ain't it chief"
@@ -38,7 +40,3 @@
 // "Bruh"
 // "Yikes"/"Big Yikes"
 // "And I oop-"
-
-// Sample Code
-// Prints "Hello World"
-yapper("Hello World")..

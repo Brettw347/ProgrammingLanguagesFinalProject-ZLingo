@@ -1,19 +1,21 @@
-yapper("Hello World")..
+yapper: "Hello World"..
 
-karen manifest number = 20..
+gatekeep manifest number = 20..
 
-karen yap text = "Bing Bong"..
+gatekeep yap text = "Bing Bong"..
 
-yapper(text)..
+yapper: text..
 
-serve FactOrCap (num)
-    finesse (num >= 10)
+serve FactOrCap: num
+    finesse: num >= 10
         clapback facts..
     throwhands
         clapback cap..
 
-FactOrCap(number)..
+FactOrCap: number..
 
-lethimcook(number < 30)
-    yapper(number)..
-    number/++..
+LetItCook: number < 30
+    yapper: number..
+    number++..
+
+manifest stringNumber = gaslight->string: number..
