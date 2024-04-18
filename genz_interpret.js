@@ -20,8 +20,19 @@ class Parser{
         if(!token){
             throw new Error("   Syntax Error: This aint it Chief.Try Again.");
             //    console.log(token);
-            
+
         }
     }
 
 }
+//Where do I check the grammar? 
+//In the parser before ou pass anything if the graamar has issues then give an error message 
+//scan through tokens tosee if they match
+//otherwise error message
+//func check_grammar(){
+  //  g1 =[Type.numb]
+//}
+//
+//How do I handle multiple lines of commands?
+
+//Where do I store vars
