@@ -4,5 +4,35 @@
 
 
 class Parser{
-    
+    constructor(tokens){
+        this.tokens = tokens;
+        this.index = 0;
+        this.currentToken = this.tokens[this.index];
+    }
+    nextToken(){
+        this.index++;
+        if(this.index < this.tokens.length){
+            this.currentToken = this.tokens[this.index];
+        }
+    }
+    parse(){
+        const token = this.currentToken;
+        if(!token){
+            throw new Error("   Syntax Error: This aint it Chief.Try Again.");
+            //    console.log(token);
+
+        }
+    }
+
 }
+//Where do I check the grammar? 
+//In the parser before ou pass anything if the graamar has issues then give an error message 
+//scan through tokens tosee if they match
+//otherwise error message
+//func check_grammar(){
+  //  g1 =[Type.numb]
+//}
+//
+//How do I handle multiple lines of commands?
+
+//Where do I store vars
