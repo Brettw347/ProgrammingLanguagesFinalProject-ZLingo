@@ -39,10 +39,10 @@ File extension: .gz
 - yapper: Used to print text to the console
 - yeet<: Removes the first item from a list
 - yeet>: Removes the last item from a list
-- yeet[i]: Removes an item from the given index of a list
+- yeet[i]: Removes an item from the given index (i) of a list
 - mansplain: Makes all characters in a manifest variable capitalized
 - shortking: Makes all characters in a manifest variable lowercased
-- gaslight-><variable type>: <variableToBeCast> : Type casts the given variable to the given variable type
+- gaslight->{variable type}: {variableToBeCast} : Type casts the given variable to the given variable type
 
 ### Loops
 - Finesse: if statement
