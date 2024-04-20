@@ -10,10 +10,41 @@ TEAM
 This project is a programming language that is designed to be used in the context of using Gen z slang.
 
 ## Demo Code
-File extension: .gz
+@ Prints 'Hello World'
+yapper: "Hello World"..
+
+@ Creates an int variable named 'number' with a value of 20
+manifest number = 20..
+
+@ Creates a static string variable named 'text' with a value of 'Bing Bong'
+gatekeep yap text = "Bing Bong"..
+
+@ Prints what is stored in the 'text' variable
+yapper: text..
+
+?? Creates a function called 'FactsOrCap' which is passed a number.
+This function returns 'facts' if the number is greater than 10, 
+but returns 'cap' if it is less than 10. ?? 
+serve FactOrCap: num
+    finesse: num >= 10
+        clapback facts..
+    throwhands
+        clapback cap..
+
+@ Calls the function passing 'number' to it
+FactOrCap: number..
+
+?? While loop that prints out numbers until number is greater than
+30 ?? 
+LetItCook: number < 30
+    yapper: number..
+    number++..
+
+@ Creates a new string by type casting 'number' as a string
+yap stringNumber = gaslight->string: number..
 
 ## Features
-
+- File extension: .gz
 
 ## Syntax Rules
 - double period (..): end character; end each line of code with ".."
@@ -42,11 +73,13 @@ File extension: .gz
 - yeet[i]: Removes an item from the given index (i) of a list
 - mansplain: Makes all characters in a manifest variable capitalized
 - shortking: Makes all characters in a manifest variable lowercased
-- gaslight->{variable type}: {variableToBeCast} : Type casts the given variable to the given variable type
+- gaslight->{newVariableType}: {variableToBeCast} : Type casts the given variable to the given variable type
+- @: Single line comment
+- ?? ??: Multi-Line comment
 
 ### Loops
 - Finesse: if statement
 - ThrowHands: else statement
 - LetItCook: while statement
-- : for statement
+- VibeCheck: for statement
 
