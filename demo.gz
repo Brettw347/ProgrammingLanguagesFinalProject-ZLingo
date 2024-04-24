@@ -1,21 +1,21 @@
-yapper: "Hello World"..
+yapper: "Hello World" ..
 
-manifest number = 20..
+manifest number = 20 ..
 
-gatekeep yap text = "Bing Bong"..
+gatekeep yap text = "Bing Bong" ..
 
-yapper: text..
+yapper: text ..
 
 serve FactOrCap: num
     finesse: num >= 10
-        clapback facts..
+        clapback facts ..
     throwhands
-        clapback cap..
+        clapback cap ..
 
-FactOrCap: number..
+FactOrCap: number ..
 
 LetItCook: number < 30
-    yapper: number..
-    number++..
+    yapper: number ..
+    number++ ..
 
-manifest stringNumber = gaslight->string: number..
+manifest stringNumber = gaslight->string: number ..
