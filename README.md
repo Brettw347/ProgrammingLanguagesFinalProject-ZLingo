@@ -9,7 +9,7 @@ TEAM
 ## Overview
 This project is a programming language that is designed to be used in the context of using Gen z slang.
 
-## Demo Code
+## Demo Code Snippets
 @ Prints 'Hello World' to the console\
 yapper: "Hello World" ..
 
@@ -43,43 +43,53 @@ LetItCook: number < 30\
 @ Creates a new string by type casting 'number' as a string\
 yap stringNumber = gaslight->string: number ..
 
+## Usage Instructions
+
 ## Features
 - File extension: .gz
 
 ## Syntax Rules
-- double period ( ..): end character; end each line of code with ".."
-- colon (:): used after certain keywords to indicate what is being passed to the keyword, function, or command. (Example: "yapper: 'Hello World' .." would print 'Hello World' to the console) 
+|Syntax|Description|
+|------|-----------|
+|double period ( ..)|end of command character.|
+|colon (:)| used after certain keywords to indicate what is being passed to the keyword, function, or command.(Example: "yapper: 'Hello World' .." would print 'Hello World' to the console)|
+|@| Indicates a single line comment|
+|??| Indicates a multi-line comment. Begin and end with '??'|
 
 ## Variables
-
-
-## Variable Types
-- manifest: Used to declare an int variable
-- yap: Used to declare a string variable
+|Variable Type|Description|
+|-------------|-----------|
+|manifest| Used to declare an int variable|
+|yap| Used to declare a string variable|
 
 ## Keywords
-- serve: Used to declare a function
-- gatekeep: Makes a variable static
-- clapback: Return statement
-- dip: Break statement
-- ghost: Null
-- facts: True
-- cap: False
+|Keyword|Description|
+|-------|-----------|
+|serve| Used to declare a function|
+|gatekeep| Makes a variable static|
+|clapback| Return statement|
+|dip| Break statement|
+|ghost| Null|
+|facts| True|
+|cap| False|
 
 ### Functions/Commands
-- yapper: Used to print text to the console
-- yeet<: Removes the first item from a list
-- yeet>: Removes the last item from a list
-- yeet[i]: Removes an item from the given index (i) of a list
-- mansplain: Makes all characters in a manifest variable capitalized
-- shortking: Makes all characters in a manifest variable lowercased
-- gaslight->{newVariableType}: {variableToBeCast} : Type casts the given variable to the given variable type
-- @: Single line comment
-- ?? ??: Multi-Line comment
+|Function Keyword|Description|
+|----------------|-----------|
+|yapper| Used to print text to the console|
+|yeet<| Removes the first item from a list|
+|yeet>| Removes the last item from a list|
+|yeet[i]| Removes the item at the given index (i) of a list|
+|mainsplain| Makes all characters in a yap variable captialized|
+|shortking| Makes all characters in a yap variable lowercased|
+|gaslight| Changes the variable type of a given variable (EX: gaslight->{newVariableType}: {variableToChange})
 
 ### Loops
-- Finesse: if statement
-- ThrowHands: else statement
-- LetItCook: while statement
-- VibeCheck: for statement
+|Loop Name|Description|
+|---------|-----------|
+|Finesse| Runs an if loop based on the given condition|
+|ThrowHands| Else Statement|
+|LetItCook| Runs the given code while the given condition is true|
+|VibeCheck| For Loop|
 
+## State of Language
