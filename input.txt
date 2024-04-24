@@ -1,0 +1,7 @@
+yap @ yap yap yap \
+?? yap manifest
+    who are you?
+?? \
+manifest 2 + 2 = 4 ..
+    yap 8 - 3 = 5 ..
+    8 - 3
