@@ -1,5 +1,7 @@
 # ProgrammingLanguagesFinalProject
 
+![Its giving placeholder](itsgiving.jpg)
+
 ## LANGCRAFT SP24
 TEAM
 1. Brett Williams
