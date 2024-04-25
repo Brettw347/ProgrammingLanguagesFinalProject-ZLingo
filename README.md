@@ -1,6 +1,6 @@
 # ProgrammingLanguagesFinalProject
 
-![Its giving placeholder](itsgiving.jpg)
+![It's giving placeholder](itsgiving.jpg)
 
 ## LANGCRAFT SP24
 TEAM
@@ -9,7 +9,7 @@ TEAM
 3. Mark Karomo
 
 ## Overview
-This project is a programming language that is designed to be used in the context of using Gen z slang.
+This project is the ZLingo language. This language is designed to use Gen Z slang in a programming context.
 
 ## Demo Code Snippets
 @ Prints 'Hello World' to the console\
@@ -44,8 +44,6 @@ LetItCook: number < 30\
 
 @ Creates a new string by type casting 'number' as a string\
 yap stringNumber = gaslight->string: number ..
-
-## Usage Instructions
 
 ## Features
 - File extension: .gz
@@ -82,7 +80,7 @@ yap stringNumber = gaslight->string: number ..
 |yeet<| Removes the first item from a list|
 |yeet>| Removes the last item from a list|
 |yeet[i]| Removes the item at the given index (i) of a list|
-|mainsplain| Makes all characters in a yap variable captialized|
+|mansplain| Makes all characters in a yap variable captialized|
 |shortking| Makes all characters in a yap variable lowercased|
 |gaslight| Changes the variable type of a given variable (EX: gaslight->{newVariableType}: {variableToChange})
 
@@ -94,4 +92,7 @@ yap stringNumber = gaslight->string: number ..
 |LetItCook| Runs the given code while the given condition is true|
 |VibeCheck| For Loop|
 
-## State of Language
+
+## Usage Instructions
+
+## State of the Language
