@@ -3,12 +3,6 @@
 // pretty print in JS --- https://stackoverflow.com/questions/4810841/pretty-print-json-using-javascript
 
 
-
-class grammarCheck{
-    g1= [Type.number + Type.Operator + Type.number + Type.EOC]; 
-    g2= [Type.manifest + Type.string + Type.EOC];
-    g3= [Type.yap + Type.number + Type.EOC];
-}
 class Parser{
     constructor(tokens){
         this.tokens = tokens;
