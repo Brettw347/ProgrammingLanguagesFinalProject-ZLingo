@@ -82,7 +82,7 @@ class Lexer {
 
 
 
-class grammarChdeck(){
+class grammarCheck{
     g1= [Type.number + Type.Operator + Type.number + Type.EOC]; 
     g2= [Type.manifest + Type.string + Type.EOC];
     g3= [Type.yap + Type.number + Type.EOC];
@@ -120,6 +120,37 @@ class Parser{
 //How do I handle multiple lines of commands?
 
 //Where do I store vars
+
+
+class Interpreter {
+    constructor() {}
+
+    evaluateAST(ast) {
+        if (ast['Type'] === 'Literal') {
+            return parseInt(ast['value']);  // Convert the value to an integer and return it
+        } else if (ast['Type'] === 'BinaryOperation') {
+            const leftVal = this.evaluateAST(ast['left']);  // Recursively evaluate the left child
+            const rightVal = this.evaluateAST(ast['right']);  // Recursively evaluate the right child
+
+            // Perform the operation based on the operator
+            switch (ast['operator']) {
+                case '+':
+                    return leftVal + rightVal;
+                case '-':
+                    return leftVal - rightVal;
+                case '*':
+                    return leftVal * rightVal;
+                case '/':
+                    if (rightVal === 0) {
+                        throw new Error("Division by zero");  // Handle division by zero
+                    }
+                    return leftVal / rightVal;
+                default:
+                    throw new Error(`Unsupported operator: ${ast['operator']}`);
+            }
+        }
+    }
+}
 
 
 const filename = 'input.txt';

@@ -1,4 +1,4 @@
-yapper: "Hello World" ..
+yap = "Hello World" ..
 
 manifest number = 20 ..
 

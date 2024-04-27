@@ -1,4 +1,4 @@
-# ProgrammingLanguagesFinalProject
+# ProgrammingLanguagesFinalProject: ZLingo
 
 ![It's giving placeholder](itsgiving.jpg)
 
@@ -90,8 +90,7 @@ yap stringNumber = gaslight->string: number ..
 |Finesse| Runs an if loop based on the given condition|
 |ThrowHands| Else Statement|
 |LetItCook| Runs the given code while the given condition is true|
-|VibeCheck| For Loop|
-
+|VibeCheck| Runs a for loop until the given condition is met|
 
 ## Usage Instructions
 
