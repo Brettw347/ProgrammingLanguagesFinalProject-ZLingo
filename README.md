@@ -1,6 +1,6 @@
 # ProgrammingLanguagesFinalProject: ZLingo
 
-![It's giving placeholder](itsgiving.jpg)
+![It's giving placeholder](images/itsgiving.jpg)
 
 ## LANGCRAFT SP24
 TEAM
@@ -12,38 +12,33 @@ TEAM
 This project is the ZLingo language. This language is designed to use Gen Z slang in a programming context.
 
 ## Demo Code Snippets
-@ Prints 'Hello World' to the console\
-yapper: "Hello World" ..
+|Code Snippet|Description|
+|------------|-----------|
+|yapper: "Hello World" ..|Prints out "Hello World" to the console.|
+|manifest number = 20 ..|Creates an int variable named 'number' with a value of 20|
+|gatekeep yap text = "Bing Bong" ..|Creates a static string variable named 'text' with a value of 'Bing Bong'|
+|yapper: text ..|Prints what is stored in the 'text' variable|
+|yap string = gaslight->string: number ..|Creates a new string by changing the int variable 'number' into a string|
+|@ This is a comment|Creats a single line comment|
 
-@ Creates an int variable named 'number' with a value of 20\
-manifest number = 20 ..
+#### Multi-Line Comment
+> ?? This is a\
+> Multi-line comment ??
 
-@ Creates a static string variable named 'text' with a value of 'Bing Bong'\
-gatekeep yap text = "Bing Bong" ..
+#### This creates a function that return 'facts' or 'cap' depending on the value of 'num' that is passed to the function:
+>       serve FactOrCap: num
+>           finesse: num >= 10
+>               clapback facts ..
+>           throwhands
+>               clapback cap ..
 
-@ Prints what is stored in the 'text' variable\
-yapper: text ..
+#### Calls the function. Passes the variable 'number' to it:
+> FactOrCap: number ..
 
-?? Creates a function called 'FactsOrCap' which is passed a number.
-This function returns 'facts' if the number is greater than 10, 
-but returns 'cap' if it is less than 10. ?? \
-serve FactOrCap: num\
-    finesse: num >= 10\
-        clapback facts ..\
-    throwhands\
-        clapback cap ..
-
-@ Calls the function passing 'number' to it\
-FactOrCap: number ..
-
-?? While loop that prints out numbers until number is greater than
-30 ?? \
-LetItCook: number < 30\
-    yapper: number ..\
-    number++ ..
-
-@ Creates a new string by type casting 'number' as a string\
-yap stringNumber = gaslight->string: number ..
+#### Creates a while loop that prints out numbers until the given variable 
+>       serve LetItCook: number < 30
+>           yapper: number ..
+>           number++ ..
 
 ## Features
 - File extension: .gz
