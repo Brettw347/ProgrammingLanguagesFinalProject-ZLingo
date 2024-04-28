@@ -9,36 +9,65 @@ TEAM
 3. Mark Karomo
 
 ## Overview
-This project is the ZLingo language. This language is designed to use Gen Z slang in a programming context.
+This is the ZLingo language. This language is designed to use Gen Z slang in a programming context. This language allows for basic object oriented programming.
 
 ## Demo Code Snippets
-|Code Snippet|Description|
-|------------|-----------|
-|yapper: "Hello World" ..|Prints out "Hello World" to the console.|
-|manifest number = 20 ..|Creates an int variable named 'number' with a value of 20|
-|gatekeep yap text = "Bing Bong" ..|Creates a static string variable named 'text' with a value of 'Bing Bong'|
-|yapper: text ..|Prints what is stored in the 'text' variable|
-|yap string = gaslight->string: number ..|Creates a new string by changing the int variable 'number' into a string|
-|@ This is a comment|Creats a single line comment|
+#### Print statement:
+```
+yapper: "Hello world" ..
+```
+
+#### int (manifest) variable declaration:
+```
+manifest number = 20..
+```
+
+#### Static string (yap) variable declaration
+```
+gatekeep yap text = "Bing Bong ..
+```
+
+#### Print statement w/ the variable 'text'
+```
+yapper: text ..
+```
+
+#### Creates a new string (yap) variable by changing the int (manifest) variable 'num' into a string (yap) variable
+```
+yap num = stringGaslight: number ..
+```
+
+#### Single line comment
+```
+@ This is a comment
+```
 
 #### Multi-Line Comment
-> ?? This is a\
-> Multi-line comment ??
+```
+?? This is a
+Multi-line comment ??
+```
 
-#### This creates a function that return 'facts' or 'cap' depending on the value of 'num' that is passed to the function:
->       serve FactOrCap: num
->           finesse: num >= 10
->               clapback facts ..
->           throwhands
->               clapback cap ..
+#### This creates a function that return 'facts' or 'cap' depending on the value of 'x' that is passed to the function:
+```
+        serve FactOrCap: x
+           finesse: x >= 10
+               clapback facts ..
+           throwhands
+               clapback cap ..
+```
 
-#### Calls the function. Passes the variable 'number' to it:
-> FactOrCap: number ..
+#### Calls the FactOrCap function, passing the variable 'number' to it:
+```
+       FactOrCap: number ..
+```
 
-#### Creates a while loop that prints out numbers until the given variable 
->       serve LetItCook: number < 30
->           yapper: number ..
->           number++ ..
+#### Creates a while loop that prints out numbers until the given variable is greater than 30
+```
+       serve LetItCook: x < 30
+           yapper: x ..
+           x++ ..
+```
 
 ## Features
 - File extension: .gz
@@ -46,8 +75,8 @@ This project is the ZLingo language. This language is designed to use Gen Z slan
 ## Syntax Rules
 |Syntax|Description|
 |------|-----------|
-|double period ( ..)|end of command character.|
-|colon (:)| used after certain keywords to indicate what is being passed to the keyword, function, or command.(Example: "yapper: 'Hello World' .." would print 'Hello World' to the console)|
+|double period ( ..)|End of command character.|
+|colon (:)| Used after certain keywords to indicate what is being passed to the keyword, function, or command.(Example: "yapper: 'Hello World' .." would print 'Hello World' to the console)|
 |@| Indicates a single line comment|
 |??| Indicates a multi-line comment. Begin and end with '??'|
 
@@ -77,7 +106,7 @@ This project is the ZLingo language. This language is designed to use Gen Z slan
 |yeet[i]| Removes the item at the given index (i) of a list|
 |mansplain| Makes all characters in a yap variable captialized|
 |shortking| Makes all characters in a yap variable lowercased|
-|gaslight| Changes the variable type of a given variable (EX: gaslight->{newVariableType}: {variableToChange})
+|gaslight| Changes the variable type of a given variable
 
 ### Loops
 |Loop Name|Description|
@@ -86,6 +115,15 @@ This project is the ZLingo language. This language is designed to use Gen Z slan
 |ThrowHands| Else Statement|
 |LetItCook| Runs the given code while the given condition is true|
 |VibeCheck| Runs a for loop until the given condition is met|
+
+### Error Messages
+|Error Message|Description|
+|-------------|-----------|
+|This ain't it chief|Syntax Error.|
+|It's giving error||
+|Bruh||
+|Big Yikes||
+|And I oop-||
 
 ## Usage Instructions
 
