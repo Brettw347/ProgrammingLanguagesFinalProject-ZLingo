@@ -189,7 +189,7 @@ class Interpreter {
 }
 
 
-const filename = 'input.txt';
+const filename = 'demo.gz';
 fs.readFile(filename, 'utf8', (err, data) => {
     if (err) {
         console.error('Error reading the file:', err);
@@ -205,4 +205,6 @@ fs.readFile(filename, 'utf8', (err, data) => {
         console.log(t);
     }
     console.log("");
+
+    
 });

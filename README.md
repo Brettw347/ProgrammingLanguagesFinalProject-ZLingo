@@ -1,6 +1,6 @@
 # ProgrammingLanguagesFinalProject: ZLingo
 
-![It's giving placeholder](images/itsgiving.jpg)
+![ZLingo Logo](images/ZLingo2.png)
 
 ## LANGCRAFT SP24
 TEAM
@@ -24,7 +24,7 @@ manifest number = 20..
 
 #### Static string (yap) variable declaration
 ```
-gatekeep yap text = "Bing Bong ..
+gatekeep yap text = "Bing Bong" ..
 ```
 
 #### Print statement w/ the variable 'text'
@@ -34,8 +34,17 @@ yapper: text ..
 
 #### Creates a new string (yap) variable by changing the int (manifest) variable 'num' into a string (yap) variable
 ```
+manifest number = 30 ..
+
 yap num = stringGaslight: number ..
 ```
+
+#### Creates a new int (manifest) variable by changing the string (yap) variable 'textNum' into an int (manifest) variable
+````
+yap num2 = 3 ..
+
+manifest textNum = intGaslight: num2 ..
+````
 
 #### Single line comment
 ```
@@ -45,7 +54,7 @@ yap num = stringGaslight: number ..
 #### Multi-Line Comment
 ```
 ?? This is a
-Multi-line comment ??
+Multi-line comment ?? \
 ```
 
 #### This creates a function that return 'facts' or 'cap' depending on the value of 'x' that is passed to the function:
@@ -76,7 +85,7 @@ Multi-line comment ??
 |Syntax|Description|
 |------|-----------|
 |double period ( ..)|End of command character.|
-|colon (:)| Used after certain keywords to indicate what is being passed to the keyword, function, or command.(Example: "yapper: 'Hello World' .." would print 'Hello World' to the console)|
+|colon (: )| Used after certain keywords to indicate what is being passed to the keyword, function, or command.(Example: "yapper: 'Hello World' .." would print 'Hello World' to the console). The space after the colon is necessary.|
 |@| Indicates a single line comment|
 |??| Indicates a multi-line comment. Begin and end with '??'|
 
