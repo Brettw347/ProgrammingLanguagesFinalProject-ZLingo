@@ -35,6 +35,8 @@ class Lexer {
         const p_digits = /^\d+$/;
         // EOC
         const p_eoc = /^\.\.$/;
+        // Special Chars
+        const p_specialchar = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]$/;
         // comments
         const p_singlecomm = /@.*$/;
         const p_multicomm_start = /^\?\?$/;
@@ -77,6 +79,9 @@ if(line.startswith('$$$')){
                 this.out.push({"Type": Type.OPERATOR, "value": token});
             } else if (p_digits.test(token)) {
                 this.out.push({"Type": Type.NUMBER, "value": token});
+            } else if (p_specialchar.test(token)) {
+                this.out.push({"Type": Type.SPECIALCHAR, "value": token});
+                continue;
             } else if (p_eoc.test(token)) {
                 this.out.push({"Type": Type.EOC, "value": token});
             }
