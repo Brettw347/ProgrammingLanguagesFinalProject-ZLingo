@@ -28,8 +28,8 @@ class Lexer {
         const p_equals = /^=$/;
         const p_add = /^\+$/;
         const p_sub = /^\-$/;
-        const p_div = /^\*$/;
-        const p_mult = /^\/$/;
+        const p_div = /^\/$/;
+        const p_mult = /^\*$/;
         // number literals
         const p_digits = /^\d+$/;
         // EOC
@@ -47,7 +47,17 @@ class Lexer {
             if (p_singlecomm.test(token)) {
                 break; // skip the rest of the line if single-line comment is encountered
             }
+/*
+if(line.startswith('$$$')){
+    inMultilineComment = true;
+    continue;
+}else if(line.trim().startswith('s')){
+    continue;
+}
+    
 
+}
+*/
             if (p_multicomm_start.test(token)) {
                 insideMultiComm = true;
                 continue; // skip the start of multiline comment token
@@ -123,7 +133,9 @@ class Parser {
             if (!this.current_token || this.current_token.Type !== Type.NUMBER) {
                 throw new Error("Syntax Error: Expected a number after operator");
             }
-
+            if (this.current_token && this.current_token.Type !== Type.EOC) {
+                throw new Error("Syntax Error: Unexpected token after the expression.");
+            }
             const right = {
                 'Type': 'Literal',
                 'value': this.current_token.value
