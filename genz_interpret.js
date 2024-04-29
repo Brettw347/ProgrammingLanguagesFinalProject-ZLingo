@@ -9,11 +9,11 @@ const Type = {
     OPERATOR: "OPERATOR",
     EOC: "ENDOFCOMMAND",
     NUMBER: "NUMBER",
+    STRIING: "STRING",
     KEYWORD: "KEYWORD",
     COMMENT: "COMMENT",
     SPECIALCHAR: "SPECIALCHAR"
 };
-// what cat should : go in
 
 class Lexer {
     constructor(input) {
@@ -31,12 +31,14 @@ class Lexer {
         const p_sub = /^\-$/;
         const p_div = /^\/$/;
         const p_mult = /^\*$/;
-        // number literals
+        // literals
         const p_digits = /^\d+$/;
-        // EOC
-        const p_eoc = /^\.\.$/;
+        const p_string_double = /^"([^"]+(?:"[^"]+)*)"/;
+        const p_string_single = /^'([^']+(?:'[^']+)*)'/;
         // Special Chars
         const p_specialchar = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]$/;
+        // EOC
+        const p_eoc = /^\.\.$/;
         // comments
         const p_singlecomm = /@.*$/;
         const p_multicomm_start = /^\?\?$/;
@@ -50,17 +52,7 @@ class Lexer {
             if (p_singlecomm.test(token)) {
                 break; // skip the rest of the line if single-line comment is encountered
             }
-/*
-if(line.startswith('$$$')){
-    inMultilineComment = true;
-    continue;
-}else if(line.trim().startswith('s')){
-    continue;
-}
-    
 
-}
-*/
             if (p_multicomm_start.test(token)) {
                 insideMultiComm = true;
                 continue; // skip the start of multiline comment token
@@ -73,12 +65,30 @@ if(line.startswith('$$$')){
                 continue; // skip tokens inside multiline comment
             }
 
+            // tokenizing STRINGS
+            if (token.startsWith('"')) {
+                const endQuoteIndex = line.indexOf('"', 1);
+                if (endQuoteIndex !== -1) {
+                    const value = line.substring(1, endQuoteIndex);
+                    this.out.push({"Type": Type.STRING, "value": value});
+                    continue;
+                }
+            } else if (token.startsWith("'")) {
+                const endQuoteIndex = line.indexOf("'", 1);
+                if (endQuoteIndex !== -1) {
+                    const value = line.substring(1, endQuoteIndex);
+                    this.out.push({"Type": Type.STRING, "value": value});
+                    continue;
+                }
+            }
+
+
             if (p_int.test(token) || p_string.test(token)) {
                 this.out.push({"Type": Type.KEYWORD, "value": token});
-            } else if (p_equals.test(token) || p_add.test(token) || p_sub.test(token) || p_div.test(token) || p_mult.test(token)) {
-                this.out.push({"Type": Type.OPERATOR, "value": token});
             } else if (p_digits.test(token)) {
                 this.out.push({"Type": Type.NUMBER, "value": token});
+            } else if (p_equals.test(token) || p_add.test(token) || p_sub.test(token) || p_div.test(token) || p_mult.test(token)) {
+                this.out.push({"Type": Type.OPERATOR, "value": token});
             } else if (p_specialchar.test(token)) {
                 this.out.push({"Type": Type.SPECIALCHAR, "value": token});
                 continue;
