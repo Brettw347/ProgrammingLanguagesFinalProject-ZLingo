@@ -1,6 +1,6 @@
 # ProgrammingLanguagesFinalProject: ZLingo
 
-![ZLingo Logo](images/ZLingo2.png)
+<img src="images/ZLingo2.png" alt="" width="400"/>
 
 ## LANGCRAFT SP24
 TEAM
