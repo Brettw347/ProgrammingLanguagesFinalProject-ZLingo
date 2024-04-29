@@ -9,7 +9,7 @@ const Type = {
     OPERATOR: "OPERATOR",
     EOC: "ENDOFCOMMAND",
     NUMBER: "NUMBER",
-    STRIING: "STRING",
+    STRING: "STRING",
     KEYWORD: "KEYWORD",
     COMMENT: "COMMENT",
     SPECIALCHAR: "SPECIALCHAR"
@@ -235,7 +235,6 @@ fs.readFile(filename, 'utf8', (err, data) => {
     console.log("");
 
     const parser = new Parser(tokens);
-    const grammar = new grammarCheck();
     let ast = parser.parse(tokens);
     console.log(ast);
     
