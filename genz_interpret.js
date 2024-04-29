@@ -179,6 +179,7 @@ class Parser {
             };
             this.nextToken();
         }
+        console.log('Parsed AST:', left);
 
         return left;
     }
