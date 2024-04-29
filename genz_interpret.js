@@ -10,7 +10,8 @@ const Type = {
     EOC: "ENDOFCOMMAND",
     NUMBER: "NUMBER",
     KEYWORD: "KEYWORD",
-    COMMENT: "COMMENT"
+    COMMENT: "COMMENT",
+    SPECIALCHAR: "SPECIALCHAR"
 };
 // what cat should : go in
 
