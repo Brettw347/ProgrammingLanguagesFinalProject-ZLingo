@@ -237,6 +237,9 @@ fs.readFile(filename, 'utf8', (err, data) => {
 
     const parser = new Parser(tokens);
     let ast = parser.parse(tokens);
-    console.log(ast);
+
+    const result = new Interpreter().evaluateAST(ast);
+    console.log(result);
     
+
 });
