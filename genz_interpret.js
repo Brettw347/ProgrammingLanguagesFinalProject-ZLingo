@@ -81,45 +81,66 @@ class Lexer {
 }
 
 
-
+//CREATE GRAMMAR CHECKER to kick things off if they 
 class grammarCheck{
-    g1= [Type.number + Type.Operator + Type.number + Type.EOC]; 
-    g2= [Type.manifest + Type.string + Type.EOC];
-    g3= [Type.yap + Type.number + Type.EOC];
+    g1= [Type.NUMBER + Type.OPERATOR + Type.NUMBER + Type.EOC]; 
+    g2= [Type.KEYWORD + Type.STRING + Type.EOC];
+    g3= [Type.KEYWORD + Type.NUMBER + Type.EOC];
 }
-class Parser{
-    constructor(tokens){
+
+//courtesy OF https://github.com/bpetcaugh/langcraftSP24/blob/main/pud_interpret.js
+class Parser {
+    constructor(tokens) {
         this.tokens = tokens;
         this.index = 0;
-        this.currentToken = this.tokens[this.index];
+        this.current_token = this.tokens[this.index] || null;
     }
-    nextToken(){
+
+    nextToken() {
         this.index++;
-        if(this.index < this.tokens.length){
-            this.currentToken = this.tokens[this.index];
-        }
-    }
-    parse(){
-        const token = this.currentToken;
-        if(!token){
-            throw new Error("   Syntax Error: This aint it Chief.Try Again.");
-            //    console.log(token);
-
-        }
+        this.current_token = this.tokens[this.index] || null;
     }
 
+    parse() {
+        if (!this.current_token) {
+            return null;  // Early exit if there are no tokens
+        }
+
+        // Start with the first number literal
+        if (this.current_token.Type !== Type.NUMBER) {
+            throw new Error("Syntax Error: Expected a number at the beginning of the expression.");
+        }
+        let left = {
+            'Type': 'Literal',
+            'value': this.current_token.value
+        };
+        this.nextToken();
+
+        // Process as long as there are tokens and the current token is an operator
+        while (this.current_token && this.current_token.Type === Type.OPERATOR) {
+            const operator = this.current_token.value;
+            this.nextToken();
+            if (!this.current_token || this.current_token.Type !== Type.NUMBER) {
+                throw new Error("Syntax Error: Expected a number after operator");
+            }
+
+            const right = {
+                'Type': 'Literal',
+                'value': this.current_token.value
+            };
+
+            left = {
+                'Type': 'BinaryOperation',
+                'operator': operator,
+                'left': left,
+                'right': right
+            };
+            this.nextToken();
+        }
+
+        return left;
+    }
 }
-//Where do I check the grammar? 
-//In the parser before ou pass anything if the graamar has issues then give an error message 
-//scan through tokens tosee if they match
-//otherwise error message
-//func check_grammar(){
-  //  g1 =[Type.numb]
-//}
-//
-//How do I handle multiple lines of commands?
-
-//Where do I store vars
 
 
 class Interpreter {
