@@ -11,73 +11,6 @@ TEAM
 ## Overview
 This is the ZLingo language. This language is designed to use Gen Z slang in a programming context. This language allows for basic object oriented programming.
 
-## Demo Code Snippets
-#### Print statement:
-```
-yapper: "Hello world" ..
-```
-
-#### int (manifest) variable declaration:
-```
-manifest number = 20..
-```
-
-#### Static string (yap) variable declaration
-```
-gatekeep yap text = "Bing Bong" ..
-```
-
-#### Print statement w/ the variable 'text'
-```
-yapper: text ..
-```
-
-#### Creates a new string (yap) variable by changing the int (manifest) variable 'num' into a string (yap) variable
-```
-manifest number = 30 ..
-
-yap num = stringGaslight: number ..
-```
-
-#### Creates a new int (manifest) variable by changing the string (yap) variable 'textNum' into an int (manifest) variable
-````
-yap num2 = 3 ..
-
-manifest textNum = intGaslight: num2 ..
-````
-
-#### Single line comment
-```
-@ This is a comment
-```
-
-#### Multi-Line Comment
-```
-?? This is a
-Multi-line comment ?? \
-```
-
-#### This creates a function that return 'facts' or 'cap' depending on the value of 'x' that is passed to the function:
-```
-        serve FactOrCap: x
-           finesse: x >= 10
-               clapback facts ..
-           throwhands
-               clapback cap ..
-```
-
-#### Calls the FactOrCap function, passing the variable 'number' to it:
-```
-       FactOrCap: number ..
-```
-
-#### Creates a while loop that prints out numbers until the given variable is greater than 30
-```
-       serve LetItCook: x < 30
-           yapper: x ..
-           x++ ..
-```
-
 ## Features
 - File extension: .gz
 
@@ -124,6 +57,72 @@ Multi-line comment ?? \
 |ThrowHands| Else Statement|
 |LetItCook| Runs the given code while the given condition is true|
 |VibeCheck| Runs a for loop until the given condition is met|
+
+## Demo Code Snippets
+#### Print statement:
+```
+yapper: "Hello world" ..
+```
+
+#### int (manifest) variable declaration:
+```
+manifest number = 20..
+```
+
+#### Static string (yap) variable declaration
+```
+gatekeep yap text = "Bing Bong" ..
+```
+
+#### Print statement w/ the variable 'text'
+```
+yapper: text ..
+```
+
+#### Creates a new string (yap) variable by changing the int (manifest) variable 'num' into a string (yap) variable
+```
+manifest number = 30 ..
+
+yap num = stringGaslight: number ..
+```
+
+#### Creates a new int (manifest) variable by changing the string (yap) variable 'textNum' into an int (manifest) variable
+````
+yap num2 = 3 ..
+
+manifest textNum = intGaslight: num2 ..
+````
+
+#### Single line comment
+```
+@ This is a comment
+```
+
+#### Multi-Line Comment
+```
+?? This is a
+Multi-line comment ?? \
+```
+#### This creates a function that return 'facts' or 'cap' depending on the value of 'x' that is passed to the function:
+```
+        serve FactOrCap: x
+           finesse: x >= 10
+               clapback facts ..
+           throwhands
+               clapback cap ..
+```
+
+#### Calls the FactOrCap function, passing the variable 'number' to it:
+```
+       FactOrCap: number ..
+```
+
+#### Creates a while loop that prints out numbers until the given variable is greater than 30
+```
+       serve LetItCook: x < 30
+           yapper: x ..
+           x++ ..
+```
 
 ### Error Messages
 |Error Message|Description|

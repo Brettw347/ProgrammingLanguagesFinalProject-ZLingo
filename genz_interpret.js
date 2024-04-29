@@ -107,10 +107,10 @@ class Lexer {
 }
 
 
-//CREATE GRAMMAR CHECKER to kick things off if they 
+//CREATE GRAMMAR CHECKER
 class grammarCheck{
     constructor(){
-   this. g1= [Type.NUMBER + Type.OPERATOR + Type.NUMBER + Type.EOC]; 
+    this.g1= [Type.NUMBER + Type.OPERATOR + Type.NUMBER + Type.EOC]; 
     this.g2= [Type.KEYWORD + Type.STRING + Type.EOC];
     this.g3= [Type.KEYWORD + Type.NUMBER + Type.EOC];
     }
@@ -121,8 +121,8 @@ class Parser {
         this.tokens = tokens;
         this.index = 0;
         this.current_token = this.tokens[this.index] || null;
-        const grammarCheck = new grammarCheck();
-        this.grammarCheck = grammarCheck;
+        const grammar = new grammarCheck();
+        this.grammarCheck = grammar;
     }
     nextToken() {
         this.index++;
@@ -234,5 +234,9 @@ fs.readFile(filename, 'utf8', (err, data) => {
     }
     console.log("");
 
+    const parser = new Parser(tokens);
+    const grammar = new grammarCheck();
+    let ast = parser.parse(tokens);
+    console.log(ast);
     
 });
