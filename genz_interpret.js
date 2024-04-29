@@ -12,7 +12,8 @@ const Type = {
     STRING: "STRING",
     KEYWORD: "KEYWORD",
     COMMENT: "COMMENT",
-    SPECIALCHAR: "SPECIALCHAR"
+    SPECIALCHAR: "SPECIALCHAR",
+    EQUALS: "EQUALS"
 };
 
 class Lexer {
@@ -87,8 +88,10 @@ class Lexer {
                 this.out.push({"Type": Type.KEYWORD, "value": token});
             } else if (p_digits.test(token)) {
                 this.out.push({"Type": Type.NUMBER, "value": token});
-            } else if (p_equals.test(token) || p_add.test(token) || p_sub.test(token) || p_div.test(token) || p_mult.test(token)) {
+            } else if (p_add.test(token) || p_sub.test(token) || p_div.test(token) || p_mult.test(token)) {
                 this.out.push({"Type": Type.OPERATOR, "value": token});
+            } else if (p_equals.test(token)){
+                this.out.push({"Type": Type.EQUALS, "value": token});
             } else if (p_specialchar.test(token)) {
                 this.out.push({"Type": Type.SPECIALCHAR, "value": token});
                 continue;
@@ -147,8 +150,8 @@ class Parser {
         }
 
         // Start with the first number literal
-        if (this.current_token.Type !== Type.NUMBER) {
-            throw new Error("Syntax Error: Expected a number at the beginning of the expression.");
+        while (this.current_token.Type !== Type.NUMBER) {
+            this.nextToken();
         }
         let left = {
             'Type': 'Literal',
@@ -163,9 +166,9 @@ class Parser {
             if (!this.current_token || this.current_token.Type !== Type.NUMBER) {
                 throw new Error("Syntax Error: Expected a number after operator");
             }
-            if (this.current_token && this.current_token.Type !== Type.EOC) {
-                throw new Error("Syntax Error: Unexpected token after the expression.");
-            }
+            // if (this.current_token && this.current_token.Type !== Type.EOC) {
+            //     throw new Error("Syntax Error: Unexpected token after the expression.");
+            // }
             const right = {
                 'Type': 'Literal',
                 'value': this.current_token.value
@@ -179,8 +182,6 @@ class Parser {
             };
             this.nextToken();
         }
-        console.log('Parsed AST:', left);
-
         return left;
     }
 }
