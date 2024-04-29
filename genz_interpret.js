@@ -103,6 +103,18 @@ class Parser {
         this.index++;
         this.current_token = this.tokens[this.index] || null;
     }
+    checkGrammar() {
+        // Compare current tokens against predefined grammar rules
+        if (this.grammarCheck.g1.includes(this.current_token.Type)) {
+            // Rule g1 satisfied
+        } else if (this.grammarCheck.g2.includes(this.current_token.Type)) {
+            // Rule g2 satisfied
+        } else if (this.grammarCheck.g3.includes(this.current_token.Type)) {
+            // Rule g3 satisfied
+        } else {
+            throw new Error("Syntax Error: THis ain't it G. Check your input.");
+        }
+    }
 
     parse() {
         if (!this.current_token) {
