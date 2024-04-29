@@ -93,19 +93,21 @@ if(line.startswith('$$$')){
 
 //CREATE GRAMMAR CHECKER to kick things off if they 
 class grammarCheck{
-    g1= [Type.NUMBER + Type.OPERATOR + Type.NUMBER + Type.EOC]; 
-    g2= [Type.KEYWORD + Type.STRING + Type.EOC];
-    g3= [Type.KEYWORD + Type.NUMBER + Type.EOC];
+    constructor(){
+   this. g1= [Type.NUMBER + Type.OPERATOR + Type.NUMBER + Type.EOC]; 
+    this.g2= [Type.KEYWORD + Type.STRING + Type.EOC];
+    this.g3= [Type.KEYWORD + Type.NUMBER + Type.EOC];
+    }
 }
-
 //courtesy OF https://github.com/bpetcaugh/langcraftSP24/blob/main/pud_interpret.js
 class Parser {
     constructor(tokens) {
         this.tokens = tokens;
         this.index = 0;
         this.current_token = this.tokens[this.index] || null;
+        const grammarCheck = new grammarCheck();
+        this.grammarCheck = grammarCheck;
     }
-
     nextToken() {
         this.index++;
         this.current_token = this.tokens[this.index] || null;
