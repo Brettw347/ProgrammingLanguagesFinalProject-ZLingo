@@ -8,7 +8,8 @@ const Type = {
     COMMENT: "COMMENT",
     // LITERALS
     NUMBER: "NUMBER",
-    STRING: "STRING"
+    STRING: "STRING",
+    SPECIALCHAR: "SPECIALCHAR"
 };
 
 class Lexer {
@@ -34,6 +35,9 @@ class Lexer {
 
         const p_string_double = /^"([^"]+(?:"[^"]+)*)"/;
         const p_string_single = /^'([^']+(?:'[^']+)*)'/;
+
+        // Special Chars
+        const p_specialchar = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]$/;
 
         // EOC
         const p_eoc = /^\.\.$/;
@@ -95,6 +99,12 @@ class Lexer {
             // Operators
             if (p_equals.test(token) || p_add.test(token) || p_sub.test(token) || p_div.test(token) || p_mult.test(token)) {
                 this.out.push({"Type": Type.OPERATOR, "value": token});
+                continue;
+            }
+
+            // Special Chars
+            if (p_specialchar.test(token)) {
+                this.out.push({"Type": Type.SPECIALCHAR, "value": token});
                 continue;
             }
 
