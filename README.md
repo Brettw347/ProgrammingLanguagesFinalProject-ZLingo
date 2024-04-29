@@ -45,7 +45,7 @@ yap num = stringGaslight: number ..
 #### Multi-Line Comment
 ```
 ?? This is a
-Multi-line comment ??
+Multi-line comment ?? \
 ```
 
 #### This creates a function that return 'facts' or 'cap' depending on the value of 'x' that is passed to the function:
