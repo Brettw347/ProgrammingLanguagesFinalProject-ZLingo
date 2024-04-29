@@ -17,10 +17,10 @@ This is the ZLingo language. This language is designed to use Gen Z slang in a p
 ## Syntax Rules
 |Syntax|Description|
 |------|-----------|
-|double period ( ..)|End of command character.|
-|colon (: )| Used after certain keywords to indicate what is being passed to the keyword, function, or command.(Example: "yapper: 'Hello World' .." would print 'Hello World' to the console). The space after the colon is necessary.|
+|double period ( ..)|End of command character. The space before the periods is necessary.|
+|colon (: )| Used after certain keywords to indicate what is being passed to the keyword, function, or command. (Example: "yapper: 'Hello World' .." would print 'Hello World' to the console). The space after the colon is necessary.|
 |@| Indicates a single line comment|
-|??| Indicates a multi-line comment. Begin and end with '??'|
+|??| Indicates a multi-line comment. Begin with '??' and end with '?? \\'|
 
 ## Variables
 |Variable Type|Description|
@@ -48,7 +48,8 @@ This is the ZLingo language. This language is designed to use Gen Z slang in a p
 |yeet[i]| Removes the item at the given index (i) of a list|
 |mansplain| Makes all characters in a yap variable captialized|
 |shortking| Makes all characters in a yap variable lowercased|
-|gaslight| Changes the variable type of a given variable
+|stringGaslight| Changes a yap variable to a manifest variable|
+|intGaslight| Changes a manifest variable to a yap variable|
 
 ### Loops
 |Loop Name|Description|
@@ -66,16 +67,18 @@ yapper: "Hello world" ..
 
 #### int (manifest) variable declaration:
 ```
-manifest number = 20..
+manifest number = 20 ..
 ```
 
-#### Static string (yap) variable declaration
+#### Static (gatekeep) string (yap) variable declaration
 ```
 gatekeep yap text = "Bing Bong" ..
 ```
 
 #### Print statement w/ the variable 'text'
 ```
+yap text = "Hello World" ..
+
 yapper: text ..
 ```
 
@@ -86,7 +89,7 @@ manifest number = 30 ..
 yap num = stringGaslight: number ..
 ```
 
-#### Creates a new int (manifest) variable by changing the string (yap) variable 'textNum' into an int (manifest) variable
+#### Creates a new int (manifest) variable by changing the string (yap) variable 'num2' into an int (manifest) variable
 ````
 yap num2 = 3 ..
 
