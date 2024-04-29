@@ -48,17 +48,7 @@ class Lexer {
             if (p_singlecomm.test(token)) {
                 break; // skip the rest of the line if single-line comment is encountered
             }
-/*
-if(line.startswith('$$$')){
-    inMultilineComment = true;
-    continue;
-}else if(line.trim().startswith('s')){
-    continue;
-}
-    
 
-}
-*/
             if (p_multicomm_start.test(token)) {
                 insideMultiComm = true;
                 continue; // skip the start of multiline comment token
