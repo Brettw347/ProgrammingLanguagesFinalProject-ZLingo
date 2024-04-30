@@ -43,6 +43,7 @@ class Lexer {
 
         // Literals
         const p_digits = /^\d+$/;
+        const p_identifier = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
 
         const p_string_double = /^"([^"]+(?:"[^"]+)*)"/;
         const p_string_single = /^'([^']+(?:'[^']+)*)'/;
@@ -95,7 +96,7 @@ class Lexer {
                 }
             }
 
-            // Keywords and Identifiers
+            // Keywords
             if (p_manifest.test(token) || p_yap.test(token) || p_serve.test(token) || p_gatekeep.test(token) || p_clapback.test(token)
             || p_dip.test(token) || p_ghost.test(token) || p_facts.test(token) || p_cap.test(token) || p_yapper.test(token) 
             || p_yeet.test(token) || p_mansplain.test(token) || p_shortking.test(token) || p_gaslight.test(token)){
@@ -107,6 +108,10 @@ class Lexer {
             if (p_digits.test(token)) {
                 this.out.push({"Type": Type.NUMBER, "value": token});
                 continue;
+            }
+
+            if (p_digits.test(token)) {
+                this.out.push({"Type": Type.IDENTIFIER, "value": token})
             }
             
             // Operators
