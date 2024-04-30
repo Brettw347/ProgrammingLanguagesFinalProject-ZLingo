@@ -109,6 +109,7 @@ class Lexer {
             if (p_eoc.test(token)) {
                 this.out.push({"Type": Type.EOC, "value": token});
             }
+            //throw new Error(`Unrecognized token: ${token}`);
         }
         for (let token of tokens) {
             // tokenizing strings
