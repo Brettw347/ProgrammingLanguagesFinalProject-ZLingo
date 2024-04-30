@@ -14,6 +14,7 @@ const Type = {
     NUMBER: "NUMBER",
     STRING: "STRING",
     SPECIALCHAR: "SPECIALCHAR"
+
 };
 
 class Lexer {
@@ -65,6 +66,7 @@ class Lexer {
 
             if (p_digits.test(token)) {
                 this.out.push({"Type": Type.NUMBER, "value": token});
+
                 continue;
             }
 
@@ -74,6 +76,7 @@ class Lexer {
             }
 
             if (p_specialchar.test(token)) {
+
                 this.out.push({"Type": Type.SPECIALCHAR, "value": token});
                 continue;
             }
@@ -123,7 +126,7 @@ class Parser {
         } else if (this.grammarCheck.g3.includes(this.current_token.Type)) {
             // Rule g3 satisfied
         } else {
-            throw new Error("Syntax Error: THis ain't it G. Check your input.");
+            throw new Error("Syntax Error: This ain't it Chief. Check your input.");
         }
     }
 
@@ -133,8 +136,8 @@ class Parser {
         }
 
         // Start with the first number literal
-        if (this.current_token.Type !== Type.NUMBER) {
-            throw new Error("Syntax Error: Expected a number at the beginning of the expression.");
+        while (this.current_token.Type !== Type.NUMBER) {
+            this.nextToken();
         }
         let left = {
             'Type': 'Literal',
@@ -149,9 +152,9 @@ class Parser {
             if (!this.current_token || this.current_token.Type !== Type.NUMBER) {
                 throw new Error("Syntax Error: Expected a number after operator");
             }
-            if (this.current_token && this.current_token.Type !== Type.EOC) {
-                throw new Error("Syntax Error: Unexpected token after the expression.");
-            }
+            // if (this.current_token && this.current_token.Type !== Type.EOC) {
+            //     throw new Error("Syntax Error: Unexpected token after the expression.");
+            // }
             const right = {
                 'Type': 'Literal',
                 'value': this.current_token.value
@@ -165,8 +168,6 @@ class Parser {
             };
             this.nextToken();
         }
-        console.log('Parsed AST:', left);
-
         return left;
     }
 }
@@ -222,6 +223,9 @@ fs.readFile(filename, 'utf8', (err, data) => {
 
     const parser = new Parser(tokens);
     let ast = parser.parse(tokens);
-    console.log(ast);
+
+    const result = new Interpreter().evaluateAST(ast);
+    console.log(result);
     
+
 });
