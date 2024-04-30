@@ -59,12 +59,6 @@ class Lexer {
 
         const tokens = line.match(/"([^"]*)"/g) || []; // extract all complete string literals
 
-        for (let token of tokens) {
-            // Tokenizing strings
-            this.out.push({ "Type": Type.STRING, "value": token });
-            line = line.replace(token, ''); // remove string from line
-        }
-
         const remainingTokens = line.split(/\s+/); // split remaining content into tokens based on whitespace
 
         for (let token of remainingTokens) {
@@ -84,7 +78,9 @@ class Lexer {
             }
             
             // check for different types of tokens
-            if (p_manifest.test(token) || p_yap.test(token) || p_serve.test(token)) {
+            if (p_manifest.test(token) || p_yap.test(token) || p_serve.test(token) || p_gatekeep.test(token) || p_clapback.test(token)
+            || p_dip.test(token) || p_ghost.test(token) || p_facts.test(token) || p_cap.test(token) || p_yapper.test(token) 
+            || p_yeet.test(token) || p_mansplain.test(token) || p_shortking.test(token) || p_gaslight.test(token)) {
                 this.out.push({"Type": Type.KEYWORD, "value": token});
                 continue;
             }
@@ -102,6 +98,12 @@ class Lexer {
             if (p_equals.test(token) || p_add.test(token) || p_sub.test(token) || p_div.test(token) || p_mult.test(token)) {
                 this.out.push({"Type": Type.OPERATOR, "value": token});
                 continue;
+            }
+
+            for (let token of tokens) {
+                // tokenizing strings
+                this.out.push({ "Type": Type.STRING, "value": token });
+                line = line.replace(token, ''); // remove string from line
             }
 
             if (p_specialchar.test(token)) {
