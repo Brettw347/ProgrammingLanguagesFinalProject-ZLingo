@@ -10,7 +10,6 @@ const Type = {
     NUMBER: "NUMBER",
     STRING: "STRING",
     SPECIALCHAR: "SPECIALCHAR"
-
 };
 
 class Lexer {
@@ -41,37 +40,32 @@ class Lexer {
             const p_sub = /^\-$/;
             const p_div = /^\*$/;
             const p_mult = /^\/$/;
-    
             // Literals
             const p_digits = /^\d+$/;
             const p_identifier = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
-    
             const p_string_double = /^"([^"]+(?:"[^"]+)*)"/;
             const p_string_single = /^'([^']+(?:'[^']+)*)'/;
-    
             // Special Chars
             const p_specialchar = /:<>\[\]/;
-    
             // EOC
             const p_eoc = /^\.\.$/;
-            
             // comments
             const p_singlecomm = /@.*$/;
             const p_multicomm_start = /^\?\?$/;
             const p_multicomm_end = /^\?\?$/;
     
-        // Check for multiline comment status
+        // check for multiline comment status
         let insideMultiComm = false;
 
-        const tokens = line.match(/"([^"]*)"/g) || []; // Extract all complete string literals
+        const tokens = line.match(/"([^"]*)"/g) || []; // extract all complete string literals
 
         for (let token of tokens) {
             // Tokenizing strings
             this.out.push({ "Type": Type.STRING, "value": token });
-            line = line.replace(token, ''); // Remove string from line
+            line = line.replace(token, ''); // remove string from line
         }
 
-        const remainingTokens = line.split(/\s+/); // Split remaining content into tokens based on whitespace
+        const remainingTokens = line.split(/\s+/); // split remaining content into tokens based on whitespace
 
         for (let token of remainingTokens) {
             // Check for comments
@@ -89,7 +83,7 @@ class Lexer {
                 continue; // skip tokens inside multiline comment
             }
             
-            // Check for different types of tokens
+            // check for different types of tokens
             if (p_manifest.test(token) || p_yap.test(token) || p_serve.test(token)) {
                 this.out.push({"Type": Type.KEYWORD, "value": token});
                 continue;
@@ -102,7 +96,6 @@ class Lexer {
 
             if (p_digits.test(token)) {
                 this.out.push({"Type": Type.NUMBER, "value": token});
-
                 continue;
             }
 
@@ -112,7 +105,6 @@ class Lexer {
             }
 
             if (p_specialchar.test(token)) {
-
                 this.out.push({"Type": Type.SPECIALCHAR, "value": token});
                 continue;
             }
