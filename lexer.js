@@ -49,7 +49,7 @@ class Lexer {
         const p_string_single = /^'([^']+(?:'[^']+)*)'/;
 
         // Special Chars
-        const p_specialchar = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]$/;
+        const p_specialchar = /:<>\[\]/;
 
         // EOC
         const p_eoc = /^\.\.$/;

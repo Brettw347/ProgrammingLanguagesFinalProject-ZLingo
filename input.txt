@@ -1,6 +1,3 @@
 @ yap yap \
 manifest 2 + 2 = 4 ..
-'where are you' ..
-Serve FactOrCap : x
-{ }
-input 3
+yap test1 = "where are you" ..
