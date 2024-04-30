@@ -22,18 +22,19 @@ class Lexer {
             // keywords
             const p_manifest = /^manifest$/;
             const p_yap = /^yap$/;
-            const p_serve = /^serve$/
-            const p_gatekeep = /^gatekeep$/
-            const p_clapback = /^clapback$/
-            const p_dip = /^dip$/
-            const p_ghost = /^ghost$/
-            const p_facts = /^facts$/
-            const p_cap = /^cap$/
-            const p_yapper = /^yapper$/
-            const p_yeet = /^yeet$/
-            const p_mansplain = /^mansplain$/
-            const p_shortking = /^shortking$/
-            const p_gaslight = /^gaslight$/
+            const p_serve = /^serve$/;
+            const p_gatekeep = /^gatekeep$/;
+            const p_clapback = /^clapback$/;
+            const p_dip = /^dip$/;
+            const p_ghost = /^ghost$/;
+            const p_facts = /^facts$/;
+            const p_cap = /^cap$/;
+            const p_yapper = /^yapper$/;
+            const p_yeet = /^yeet$/;
+            const p_mansplain = /^mansplain$/;
+            const p_shortking = /^shortking$/;
+            const p_stringGaslight = /^stringGaslight$/;
+            const p_intGaslight = /^intGaslight$/;
             // operators
             const p_equals = /^=$/;
             const p_add = /^\+$/;
@@ -80,7 +81,8 @@ class Lexer {
             // check for different types of tokens
             if (p_manifest.test(token) || p_yap.test(token) || p_serve.test(token) || p_gatekeep.test(token) || p_clapback.test(token)
             || p_dip.test(token) || p_ghost.test(token) || p_facts.test(token) || p_cap.test(token) || p_yapper.test(token) 
-            || p_yeet.test(token) || p_mansplain.test(token) || p_shortking.test(token) || p_gaslight.test(token)) {
+            || p_yeet.test(token) || p_mansplain.test(token) || p_shortking.test(token) || p_stringGaslight.test(token) 
+            || p_intGaslight.test(token)) {
                 this.out.push({"Type": Type.KEYWORD, "value": token});
                 continue;
             }
