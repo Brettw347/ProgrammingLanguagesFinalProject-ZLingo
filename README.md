@@ -144,5 +144,10 @@ The following are proper grammar statements that can be used in the language.
 |And I oop-||
 
 ## Usage Instructions
+1. Make sure [node.js](https://nodejs.org/en/download) is installed. If it isn't, click the link to download it.
+2. Download this repo to your machine.
+3. Open in VSCode or another code editor
+4. Open a terminal
+5. 
 
 ## State of the Language
