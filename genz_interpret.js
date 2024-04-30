@@ -203,9 +203,8 @@ class Parser {
 }
 
 
-class Interpreter {
+class Interpreter { //courtesy OF https://github.com/bpetcaugh/langcraftSP24/blob/main/pud_interpret.js
     constructor() {}
-
     evaluateAST(ast) {
         if (ast['Type'] === 'Literal') {
             return parseInt(ast['value']);  // Convert the value to an integer and return it

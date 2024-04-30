@@ -128,26 +128,48 @@ Multi-line comment ?? \
 ```
 
 ### Grammar Statements
-The following are proper grammar statements that can be used in the language.
-- manifest VARNAME EQUALS NUM OPERATOR NUM ..
-- manifest VARNAME EQUALS NUM OPERATOR NUM OPERATOR ..
-- manifest VARNAME OPERATOR OPERATOR ..
-- yap VARNAME EQUALS STRING ..
+The following are proper grammar statements that can be used in the language. Grammar statements marks with asterisks (*) are not functional yet.
+- manifest VARNAME = NUM OPERATOR NUM ..
+- manifest VARNAME = NUM OPERATOR NUM OPERATOR ..
+- VARNAME OPERATOR OPERATOR ..*
+- yap VARNAME = STRING ..*
+- yap VARNAME = stringGaslight: VARNAME2 .. *
+- manifest VARNAME = intGaslight: VARNAME2 ..*
+- serve FUNCTIONNAME: PARAMETER *
+- FUNCTIONNAME: PARAMETER *
+- yapper: YAP, MANIFEST, OR STRING
 
-### Error Messages
+
+## Error Messages
 |Error Message|Description|
 |-------------|-----------|
-|This ain't it chief|Syntax Error.|
-|It's giving error||
-|Bruh||
-|Big Yikes||
-|And I oop-||
+|This ain't it chief|Syntax Error|
+|The range ain't ranging|Range Error|
+|It's giving error|Type Error|
+|Bruh|Index Error|
+|Big Yikes|Internal Error|
+|And I oop-|Reference Error|
 
 ## Usage Instructions
 1. Make sure [node.js](https://nodejs.org/en/download) is installed. If it isn't, click the link to download it.
 2. Download this repo to your machine.
-3. Open in VSCode or another code editor
+3. Open this repo in VSCode or another code editor
 4. Open a terminal
-5. 
+5. Type 'node genz_interpret.js demo.gz' into the terminal and hit 'enter' to run.
+6. (OPTIONAL) If you would like to change any code, you can go into the 'demo.gz' file to edit or add your own code.
 
 ## State of the Language
+The language can currently do simple math (addition, subtraction, multiplication, division) as well as store simple manifest and yap variables. 
+
+### Upcoming Features
+- Loops
+- Functions
+- Comments
+- Lists/Arrays
+- Non-variable keywords (facts, cap, dip, etc)
+- PEMDAS
+- Commands (yeet<, stringGaslight, etc)
+
+### Bugs
+- Manifest variables are not able to be processed through the parser.
+- Only partial grammar checking; still in development.

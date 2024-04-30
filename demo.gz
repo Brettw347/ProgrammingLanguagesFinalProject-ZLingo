@@ -1,1 +1,1 @@
-yap test1 = "hello world" ..
+manifest num1 = 300 / 10 + 20 ..
