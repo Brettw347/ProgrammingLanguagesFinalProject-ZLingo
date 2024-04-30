@@ -20,6 +20,46 @@ class Lexer {
     }
 
     lexLine(line) {
+            // keywords
+            const p_manifest = /^manifest$/;
+            const p_yap = /^yap$/;
+            const p_serve = /^serve$/
+            const p_gatekeep = /^gatekeep$/
+            const p_clapback = /^clapback$/
+            const p_dip = /^dip$/
+            const p_ghost = /^ghost$/
+            const p_facts = /^facts$/
+            const p_cap = /^cap$/
+            const p_yapper = /^yapper$/
+            const p_yeet = /^yeet$/
+            const p_mansplain = /^mansplain$/
+            const p_shortking = /^shortking$/
+            const p_gaslight = /^gaslight$/
+            // operators
+            const p_equals = /^=$/;
+            const p_add = /^\+$/;
+            const p_sub = /^\-$/;
+            const p_div = /^\*$/;
+            const p_mult = /^\/$/;
+    
+            // Literals
+            const p_digits = /^\d+$/;
+            const p_identifier = /^[a-zA-Z_][a-zA-Z0-9_]*$/;
+    
+            const p_string_double = /^"([^"]+(?:"[^"]+)*)"/;
+            const p_string_single = /^'([^']+(?:'[^']+)*)'/;
+    
+            // Special Chars
+            const p_specialchar = /:<>\[\]/;
+    
+            // EOC
+            const p_eoc = /^\.\.$/;
+            
+            // comments
+            const p_singlecomm = /@.*$/;
+            const p_multicomm_start = /^\?\?$/;
+            const p_multicomm_end = /^\?\?$/;
+    
         // Check for multiline comment status
         let insideMultiComm = false;
 
