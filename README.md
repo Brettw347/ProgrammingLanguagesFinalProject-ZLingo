@@ -127,6 +127,13 @@ Multi-line comment ?? \
            x++ ..
 ```
 
+### Grammar Statements
+The following are proper grammar statements that can be used in the language.
+- manifest VARNAME EQUALS NUM OPERATOR NUM ..
+- manifest VARNAME EQUALS NUM OPERATOR NUM OPERATOR ..
+- manifest VARNAME OPERATOR OPERATOR ..
+- yap VARNAME EQUALS STRING ..
+
 ### Error Messages
 |Error Message|Description|
 |-------------|-----------|

@@ -140,7 +140,7 @@ class Parser {
         } else if (this.grammarCheck.g3.includes(this.current_token.Type)) {
             // Rule g3 satisfied
         } else {
-            throw new Error("Syntax Error: THis ain't it G. Check your input.");
+            throw new Error("Syntax Error: This ain't it Chief. Check your input.");
         }
     }
 
