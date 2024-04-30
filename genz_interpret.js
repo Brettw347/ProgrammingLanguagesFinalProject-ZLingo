@@ -6,7 +6,6 @@ const Type = {
     EOC: "ENDOFCOMMAND",
     KEYWORD: "KEYWORD",
     COMMENT: "COMMENT",
-    // LITERALS
     NUMBER: "NUMBER",
     STRING: "STRING",
     SPECIALCHAR: "SPECIALCHAR"
@@ -19,7 +18,7 @@ class Lexer {
     }
 
     lexLine(line) {
-            // keywords
+            // Keywords
             const p_manifest = /^manifest$/;
             const p_yap = /^yap$/;
             const p_serve = /^serve$/;
@@ -35,7 +34,7 @@ class Lexer {
             const p_shortking = /^shortking$/;
             const p_stringGaslight = /^stringGaslight$/;
             const p_intGaslight = /^intGaslight$/;
-            // operators
+            // Operators
             const p_equals = /^=$/;
             const p_add = /^\+$/;
             const p_sub = /^\-$/;
@@ -50,7 +49,7 @@ class Lexer {
             const p_specialchar = /:<>\[\]/;
             // EOC
             const p_eoc = /^\.\.$/;
-            // comments
+            // Comments
             const p_singlecomm = /@.*$/;
             const p_multicomm_start = /^\?\?$/;
             const p_multicomm_end = /^\?\?$/;
@@ -63,7 +62,7 @@ class Lexer {
         const remainingTokens = line.split(/\s+/); // split remaining content into tokens based on whitespace
 
         for (let token of remainingTokens) {
-            // Check for comments
+            // check for comments
             if (p_singlecomm.test(token)) {
                 break; // skip the rest of the line if single-line comment is encountered
             }
@@ -102,12 +101,6 @@ class Lexer {
                 continue;
             }
 
-            for (let token of tokens) {
-                // tokenizing strings
-                this.out.push({ "Type": Type.STRING, "value": token });
-                line = line.replace(token, ''); // remove string from line
-            }
-
             if (p_specialchar.test(token)) {
                 this.out.push({"Type": Type.SPECIALCHAR, "value": token});
                 continue;
@@ -116,6 +109,11 @@ class Lexer {
             if (p_eoc.test(token)) {
                 this.out.push({"Type": Type.EOC, "value": token});
             }
+        }
+        for (let token of tokens) {
+            // tokenizing strings
+            this.out.push({ "Type": Type.STRING, "value": token });
+            line = line.replace(token, ''); // remove string from line
         }
     }
 
