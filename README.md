@@ -22,15 +22,11 @@ This is the ZLingo language. This language is designed to use Gen Z slang in a p
 |@| Indicates a single line comment|
 |??| Indicates a multi-line comment. Begin with '??' and end with '?? \\'|
 
-## Variables
-|Variable Type|Description|
-|-------------|-----------|
-|manifest| Used to declare an int variable|
-|yap| Used to declare a string variable|
-
 ## Keywords
 |Keyword|Description|
 |-------|-----------|
+|manifest| Used to declare an int variable|
+|yap| Used to declare a string variable|
 |serve| Used to declare a function|
 |gatekeep| Makes a variable static|
 |clapback| Return statement|
